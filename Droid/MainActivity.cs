@@ -24,6 +24,9 @@ namespace ScoresApp.Droid
 		{
 			base.OnCreate (bundle);
 
+			if (!Xamarin.Insights.IsInitialized)
+				Xamarin.Insights.Initialize (XamarinInsights.ApiKey, this);
+
 			global::Xamarin.Forms.Forms.Init (this, bundle);
 
 			FormsAppCompatActivity.ToolbarResource = Resource.Layout.toolbar;
