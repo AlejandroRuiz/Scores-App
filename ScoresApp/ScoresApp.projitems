@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{682FEC38-52A2-4CC5-B796-FB5C90D24226}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>ScoresApp</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ScoresApp.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\MenuPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\WelcomePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\ScoresAppStyleKit.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\MainMasterDetailPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\LeagueItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\LeagueResultsPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\WebService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\Responses\Fixtures.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Fixture.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\FixturesExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\FixtureLayout.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\FixtureTeam.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\Responses\Team.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SvgImage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Database\SqlManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\FixtureCardView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\FixtureCardStatusView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\FixtureCardDetailsView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\LeagueCardView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\LeagueCardDetailsView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\NoDataView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\LoadingDataView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MenuViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\FavoritesViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Defaults\Defaults.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\" />
+    <Folder Include="$(MSBuildThisFileDirectory)UI\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Defaults\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Service\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Service\Responses\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Extensions\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Controls\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Database\" />
+  </ItemGroup>
+</Project>
