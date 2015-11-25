@@ -9,7 +9,6 @@ using Android.OS;
 using Xamarin.Forms.Platform.Android;
 using ScoresApp.Database;
 using SQLite.Net.Platform.XamarinAndroid;
-using Refractored.XamForms.PullToRefresh.Droid;
 
 namespace ScoresApp.Droid
 {
@@ -29,10 +28,6 @@ namespace ScoresApp.Droid
 
 			FormsAppCompatActivity.ToolbarResource = Resource.Layout.toolbar;
 			FormsAppCompatActivity.TabLayoutResource = Resource.Layout.tabs;
-
-			SqlManager.Init (new SQLitePlatformAndroid());
-
-			PullToRefreshLayoutRenderer.Init ();
 
 			LoadApplication (new App ());
 		}

@@ -88,12 +88,6 @@
     <Reference Include="SQLite.Net.Platform.XamarinAndroid">
       <HintPath>..\packages\SQLite.Net-PCL.3.1.1\lib\MonoAndroid\SQLite.Net.Platform.XamarinAndroid.dll</HintPath>
     </Reference>
-    <Reference Include="Refractored.XamForms.PullToRefresh.Droid">
-      <HintPath>..\packages\Refractored.XamForms.PullToRefresh.1.0.5\lib\MonoAndroid10\Refractored.XamForms.PullToRefresh.Droid.dll</HintPath>
-    </Reference>
-    <Reference Include="Refractored.XamForms.PullToRefresh">
-      <HintPath>..\packages\Refractored.XamForms.PullToRefresh.1.0.5\lib\MonoAndroid10\Refractored.XamForms.PullToRefresh.dll</HintPath>
-    </Reference>
     <Reference Include="NGraphics.Android.Custom">
       <HintPath>ext\NGraphics.Android.Custom.dll</HintPath>
     </Reference>
@@ -106,6 +100,7 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderers\SvgImageRenderer.cs" />
+    <Compile Include="Dependencies\SQLManager_Android.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -121,6 +116,7 @@
     <Folder Include="Resources\values-v21\" />
     <Folder Include="Renderers\" />
     <Folder Include="ext\" />
+    <Folder Include="Dependencies\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon.png" />

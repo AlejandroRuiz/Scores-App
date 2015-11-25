@@ -36,6 +36,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\FavoritesViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Defaults\Defaults.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dependencies\ISQLManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
@@ -49,5 +50,6 @@
     <Folder Include="$(MSBuildThisFileDirectory)Extensions\" />
     <Folder Include="$(MSBuildThisFileDirectory)Controls\" />
     <Folder Include="$(MSBuildThisFileDirectory)Database\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Dependencies\" />
   </ItemGroup>
 </Project>

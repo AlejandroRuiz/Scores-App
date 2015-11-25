@@ -6,7 +6,6 @@ using Foundation;
 using UIKit;
 using ScoresApp.Database;
 using SQLite.Net.Platform.XamarinIOS;
-using Refractored.XamForms.PullToRefresh.iOS;
 
 namespace ScoresApp.iOS
 {
@@ -21,10 +20,6 @@ namespace ScoresApp.iOS
 			#if ENABLE_TEST_CLOUD
 			Xamarin.Calabash.Start();
 			#endif
-
-			SqlManager.Init (new SQLitePlatformIOS());
-
-			PullToRefreshLayoutRenderer.Init ();
 
 			LoadApplication (new App ());
 

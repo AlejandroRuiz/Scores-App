@@ -2,6 +2,8 @@
 
 using Xamarin.Forms;
 using ScoresApp.Pages;
+using ScoresApp.Database;
+using ScoresApp.Dependencies;
 
 namespace ScoresApp
 {
@@ -24,6 +26,7 @@ namespace ScoresApp
 			// The root page of your application
 			MainPage = new MainMasterDetailPage();
 			CurrentApp = this;
+			SqlManager.Init (DependencyService.Get<ISQLManager>().NativeManager);
 		}
 
 		protected override void OnStart ()

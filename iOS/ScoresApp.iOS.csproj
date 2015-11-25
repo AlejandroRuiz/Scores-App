@@ -109,12 +109,6 @@
     <Reference Include="SQLite.Net.Platform.XamarinIOS.Unified">
       <HintPath>..\packages\SQLite.Net-PCL.3.1.1\lib\Xamarin.iOS10\SQLite.Net.Platform.XamarinIOS.Unified.dll</HintPath>
     </Reference>
-    <Reference Include="Refractored.XamForms.PullToRefresh.iOS">
-      <HintPath>..\packages\Refractored.XamForms.PullToRefresh.1.0.5\lib\Xamarin.iOS10\Refractored.XamForms.PullToRefresh.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="Refractored.XamForms.PullToRefresh">
-      <HintPath>..\packages\Refractored.XamForms.PullToRefresh.1.0.5\lib\Xamarin.iOS10\Refractored.XamForms.PullToRefresh.dll</HintPath>
-    </Reference>
     <Reference Include="NGraphics.Custom">
       <HintPath>ext\NGraphics.Custom.dll</HintPath>
     </Reference>
@@ -155,6 +149,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renderers\SvgImageRenderer.cs" />
+    <Compile Include="Dependencies\SQLManager_iOS.cs" />
   </ItemGroup>
   <Import Project="..\ScoresApp\ScoresApp.projitems" Label="Shared" Condition="Exists('..\ScoresApp\ScoresApp.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
@@ -195,6 +190,7 @@
   <ItemGroup>
     <Folder Include="Renderers\" />
     <Folder Include="ext\" />
+    <Folder Include="Dependencies\" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork" />

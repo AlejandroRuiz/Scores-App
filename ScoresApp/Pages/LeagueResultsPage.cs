@@ -6,7 +6,6 @@ using ScoresApp.Defaults;
 using System.Threading.Tasks;
 using ScoresApp.Views;
 using ScoresApp.Database;
-using Refractored.XamForms.PullToRefresh;
 
 namespace ScoresApp.Pages
 {
