@@ -1484,7 +1484,6 @@ namespace ScoresApp.Droid
 			global::Xamarin.Forms.Platform.Resource.Styleable.ViewStubCompat_android_id = global::ScoresApp.Droid.Resource.Styleable.ViewStubCompat_android_id;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ViewStubCompat_android_inflatedId = global::ScoresApp.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ViewStubCompat_android_layout = global::ScoresApp.Droid.Resource.Styleable.ViewStubCompat_android_layout;
-			global::NGraphics.Android.Custom.Resource.String.library_name = global::ScoresApp.Droid.Resource.String.library_name;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::ScoresApp.Droid.Resource.String.ApplicationName;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::ScoresApp.Droid.Resource.String.Hello;
 		}
@@ -4032,9 +4031,6 @@ namespace ScoresApp.Droid
 			
 			// aapt resource value: 0x7f05000b
 			public const int appbar_scrolling_view_behavior = 2131034123;
-			
-			// aapt resource value: 0x7f050020
-			public const int library_name = 2131034144;
 			
 			// aapt resource value: 0x7f050000
 			public const int mr_media_route_button_content_description = 2131034112;
