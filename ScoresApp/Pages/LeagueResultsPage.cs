@@ -11,6 +11,7 @@ using ScoresApp.Controls;
 using System.Collections;
 using System.Collections.ObjectModel;
 using System.Threading;
+using Xamarin;
 
 namespace ScoresApp.Pages
 {
@@ -135,6 +136,9 @@ namespace ScoresApp.Pages
 		protected override void OnAppearing ()
 		{
 			base.OnAppearing ();
+
+			Insights.Track(InsightsConstants.LeagueResultsPage);
+
 			cts = new CancellationTokenSource ();
 			_fixturesListView.ItemAppearing += _fixturesListView_ItemAppearing;
 			_fixturesListView.ItemTapped += _fixturesListView_ItemTapped;

@@ -1,6 +1,9 @@
 ﻿using System;
 using Xamarin.Forms;
 using ScoresApp.UI;
+using Xamarin;
+using ScoresApp.Defaults;
+using System.Collections.Generic;
 
 namespace ScoresApp.Pages
 {
@@ -26,6 +29,23 @@ namespace ScoresApp.Pages
 				BarBackgroundColor = ScoresAppStyleKit.NavigationBarBackgroundColor,
 				BarTextColor = ScoresAppStyleKit.NavigationBarTextColor
 			};
+		}
+
+		protected override void OnAppearing ()
+		{
+			base.OnAppearing ();
+			Insights.Track(InsightsConstants.MainMasterDetailPage);
+
+			//Record Test User To Xamarin Insights
+			Insights.Identify(
+				"elgoberlivel@gmail.com", 
+				new Dictionary<string, string> 
+				{
+					{ Insights.Traits.Email, "elgoberlivel@gmail.com"},
+					{ Insights.Traits.FirstName, "Alejandro" },
+					{ Insights.Traits.LastName, "Ruiz" }
+				}
+			);
 		}
 	}
 }

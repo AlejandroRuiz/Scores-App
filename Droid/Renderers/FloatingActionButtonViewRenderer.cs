@@ -27,6 +27,7 @@ using Android.Views;
 using System.IO;
 using ScoresApp.Controls;
 using ScoresApp.Droid.Renderers;
+using Xamarin;
 
 [assembly: ExportRenderer (typeof (FloatingActionButtonView), typeof (FloatingActionButtonViewRenderer))]
 namespace ScoresApp.Droid.Renderers
@@ -148,6 +149,7 @@ namespace ScoresApp.Droid.Renderers
 				}
 				catch(Exception ex)
 				{
+					Insights.Report(ex);
 					throw new FileNotFoundException("There was no Android Drawable by that name.", ex);
 				}
 			}

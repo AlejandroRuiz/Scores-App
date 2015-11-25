@@ -48,5 +48,36 @@ namespace ScoresApp.Defaults
 			}
 		}
 	}
+
+	public static class InsightsConstants
+	{
+		public static string LeagueResultsPage
+		{
+			get{
+				return "League Results Page";
+			}
+		}
+
+		public static string MainMasterDetailPage
+		{
+			get{
+				return "Main Master Detail Page";
+			}
+		}
+
+		public static string MenuPage
+		{
+			get{
+				return "Menu Page";
+			}
+		}
+
+		public static string WelcomePage
+		{
+			get{
+				return "Welcome Page";
+			}
+		}
+	}
 }
 

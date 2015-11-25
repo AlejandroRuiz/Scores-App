@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using ScoresApp.Models;
 using ScoresApp.ViewModels;
 using ScoresApp.Defaults;
+using Xamarin;
 
 namespace ScoresApp.Pages
 {
@@ -98,6 +99,7 @@ namespace ScoresApp.Pages
 		protected override void OnAppearing ()
 		{
 			base.OnAppearing ();
+			Insights.Track(InsightsConstants.MenuPage);
 			_menuListView.ItemTapped += _menuListView_ItemTapped;
 		}
 

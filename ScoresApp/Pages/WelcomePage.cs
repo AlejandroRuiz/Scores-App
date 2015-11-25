@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using ScoresApp.ViewModels;
 using System.Linq;
 using System.Threading.Tasks;
+using Xamarin;
 
 namespace ScoresApp.Pages
 {
@@ -136,6 +137,7 @@ namespace ScoresApp.Pages
 		protected override void OnAppearing ()
 		{
 			base.OnAppearing ();
+			Insights.Track(InsightsConstants.WelcomePage);
 			Title = Strings.AppName;
 			CreateLayout ();
 		}

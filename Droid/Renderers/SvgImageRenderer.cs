@@ -38,6 +38,7 @@ using NGraphics.Android.Custom;
 using Android.Runtime;
 using ScoresApp.Droid.Renderers;
 using Android.Graphics.Drawables;
+using Xamarin;
 
 [assembly: ExportRenderer (typeof(SvgImage), typeof(SvgImageRenderer))]
 namespace ScoresApp.Droid.Renderers
@@ -92,7 +93,8 @@ namespace ScoresApp.Droid.Renderers
 					Uri u;
 					try{
 						u = new Uri (_formsControl.SvgPath);
-					}catch{
+					}catch(Exception e){
+						Insights.Report(e);
 						return null;
 					}
 					var path = Path.Combine (Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments), Path.GetFileName (u.AbsolutePath));
@@ -101,7 +103,8 @@ namespace ScoresApp.Droid.Renderers
 							try{
 								var bytes = await client.GetByteArrayAsync (_formsControl.SvgPath);
 								File.WriteAllBytes (path, bytes);
-							}catch{
+							}catch(Exception e){
+								Insights.Report(e);
 								return null;
 							}
 						}
@@ -117,7 +120,8 @@ namespace ScoresApp.Droid.Renderers
 					SvgReader r;
 					try{
 						r = new SvgReader(new StreamReader(svgStream), new StylesParser(new ValuesParser()), new ValuesParser());
-					}catch{
+					}catch(Exception e){
+						Insights.Report(e);
 						return null;
 					}
 
@@ -143,7 +147,8 @@ namespace ScoresApp.Droid.Renderers
 						var image = (BitmapImage)canvas.GetImage();
 						return image;
 					}
-					catch{
+					catch(Exception e){
+						Insights.Report(e);
 						return null;
 					}
 				}).ContinueWith(taskResult =>
@@ -170,7 +175,7 @@ namespace ScoresApp.Droid.Renderers
 			try { 
 				return Context.Resources.GetIdentifier(pVariableName, pResourcename, pPackageName);
 			} catch (Exception e) {
-				Console.WriteLine (e.Message);
+				Insights.Report(e);
 				return -1; 
 			}  
 		} 
