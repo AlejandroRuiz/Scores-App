@@ -1487,6 +1487,29 @@ namespace ScoresApp.Droid
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::ScoresApp.Droid.Resource.String.ApplicationName;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::ScoresApp.Droid.Resource.String.Hello;
 			global::NGraphics.Android.Custom.Resource.String.library_name = global::ScoresApp.Droid.Resource.String.library_name;
+			global::com.refractored.fab.Resource.Attribute.fab_colorDisabled = global::ScoresApp.Droid.Resource.Attribute.fab_colorDisabled;
+			global::com.refractored.fab.Resource.Attribute.fab_colorNormal = global::ScoresApp.Droid.Resource.Attribute.fab_colorNormal;
+			global::com.refractored.fab.Resource.Attribute.fab_colorPressed = global::ScoresApp.Droid.Resource.Attribute.fab_colorPressed;
+			global::com.refractored.fab.Resource.Attribute.fab_colorRipple = global::ScoresApp.Droid.Resource.Attribute.fab_colorRipple;
+			global::com.refractored.fab.Resource.Attribute.fab_shadow = global::ScoresApp.Droid.Resource.Attribute.fab_shadow;
+			global::com.refractored.fab.Resource.Attribute.fab_size = global::ScoresApp.Droid.Resource.Attribute.fab_size;
+			global::com.refractored.fab.Resource.Color.fab_material_blue_500 = global::ScoresApp.Droid.Resource.Color.fab_material_blue_500;
+			global::com.refractored.fab.Resource.Dimension.fab_elevation_lollipop = global::ScoresApp.Droid.Resource.Dimension.fab_elevation_lollipop;
+			global::com.refractored.fab.Resource.Dimension.fab_scroll_threshold = global::ScoresApp.Droid.Resource.Dimension.fab_scroll_threshold;
+			global::com.refractored.fab.Resource.Dimension.fab_shadow_size = global::ScoresApp.Droid.Resource.Dimension.fab_shadow_size;
+			global::com.refractored.fab.Resource.Dimension.fab_size_mini = global::ScoresApp.Droid.Resource.Dimension.fab_size_mini;
+			global::com.refractored.fab.Resource.Dimension.fab_size_normal = global::ScoresApp.Droid.Resource.Dimension.fab_size_normal;
+			global::com.refractored.fab.Resource.Drawable.fab_shadow = global::ScoresApp.Droid.Resource.Drawable.fab_shadow;
+			global::com.refractored.fab.Resource.Drawable.fab_shadow_mini = global::ScoresApp.Droid.Resource.Drawable.fab_shadow_mini;
+			global::com.refractored.fab.Resource.Id.mini = global::ScoresApp.Droid.Resource.Id.mini;
+			global::com.refractored.fab.Resource.Id.normal = global::ScoresApp.Droid.Resource.Id.normal;
+			global::com.refractored.fab.Resource.Styleable.FloatingActionButton = global::ScoresApp.Droid.Resource.Styleable.FloatingActionButton;
+			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_colorDisabled = global::ScoresApp.Droid.Resource.Styleable.FloatingActionButton_fab_colorDisabled;
+			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_colorNormal = global::ScoresApp.Droid.Resource.Styleable.FloatingActionButton_fab_colorNormal;
+			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_colorPressed = global::ScoresApp.Droid.Resource.Styleable.FloatingActionButton_fab_colorPressed;
+			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_colorRipple = global::ScoresApp.Droid.Resource.Styleable.FloatingActionButton_fab_colorRipple;
+			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_shadow = global::ScoresApp.Droid.Resource.Styleable.FloatingActionButton_fab_shadow;
+			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_size = global::ScoresApp.Droid.Resource.Styleable.FloatingActionButton_fab_size;
 		}
 		
 		public partial class Animation
@@ -1921,6 +1944,24 @@ namespace ScoresApp.Droid
 			
 			// aapt resource value: 0x7f01002d
 			public const int fabSize = 2130772013;
+			
+			// aapt resource value: 0x7f01011a
+			public const int fab_colorDisabled = 2130772250;
+			
+			// aapt resource value: 0x7f010119
+			public const int fab_colorNormal = 2130772249;
+			
+			// aapt resource value: 0x7f010118
+			public const int fab_colorPressed = 2130772248;
+			
+			// aapt resource value: 0x7f01011b
+			public const int fab_colorRipple = 2130772251;
+			
+			// aapt resource value: 0x7f01011c
+			public const int fab_shadow = 2130772252;
+			
+			// aapt resource value: 0x7f01011d
+			public const int fab_size = 2130772253;
 			
 			// aapt resource value: 0x7f010077
 			public const int gapBetweenBars = 2130772087;
@@ -2434,32 +2475,32 @@ namespace ScoresApp.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f08004b
-			public const int abc_background_cache_hint_selector_material_dark = 2131230795;
-			
 			// aapt resource value: 0x7f08004c
-			public const int abc_background_cache_hint_selector_material_light = 2131230796;
+			public const int abc_background_cache_hint_selector_material_dark = 2131230796;
 			
 			// aapt resource value: 0x7f08004d
-			public const int abc_color_highlight_material = 2131230797;
+			public const int abc_background_cache_hint_selector_material_light = 2131230797;
+			
+			// aapt resource value: 0x7f08004e
+			public const int abc_color_highlight_material = 2131230798;
 			
 			// aapt resource value: 0x7f08000d
 			public const int abc_input_method_navigation_guard = 2131230733;
 			
-			// aapt resource value: 0x7f08004e
-			public const int abc_primary_text_disable_only_material_dark = 2131230798;
-			
 			// aapt resource value: 0x7f08004f
-			public const int abc_primary_text_disable_only_material_light = 2131230799;
+			public const int abc_primary_text_disable_only_material_dark = 2131230799;
 			
 			// aapt resource value: 0x7f080050
-			public const int abc_primary_text_material_dark = 2131230800;
+			public const int abc_primary_text_disable_only_material_light = 2131230800;
 			
 			// aapt resource value: 0x7f080051
-			public const int abc_primary_text_material_light = 2131230801;
+			public const int abc_primary_text_material_dark = 2131230801;
 			
 			// aapt resource value: 0x7f080052
-			public const int abc_search_url_text = 2131230802;
+			public const int abc_primary_text_material_light = 2131230802;
+			
+			// aapt resource value: 0x7f080053
+			public const int abc_search_url_text = 2131230803;
 			
 			// aapt resource value: 0x7f08000e
 			public const int abc_search_url_text_normal = 2131230734;
@@ -2470,14 +2511,14 @@ namespace ScoresApp.Droid
 			// aapt resource value: 0x7f080010
 			public const int abc_search_url_text_selected = 2131230736;
 			
-			// aapt resource value: 0x7f080053
-			public const int abc_secondary_text_material_dark = 2131230803;
-			
 			// aapt resource value: 0x7f080054
-			public const int abc_secondary_text_material_light = 2131230804;
+			public const int abc_secondary_text_material_dark = 2131230804;
 			
-			// aapt resource value: 0x7f080049
-			public const int accent = 2131230793;
+			// aapt resource value: 0x7f080055
+			public const int abc_secondary_text_material_light = 2131230805;
+			
+			// aapt resource value: 0x7f08004a
+			public const int accent = 2131230794;
 			
 			// aapt resource value: 0x7f080011
 			public const int accent_material_dark = 2131230737;
@@ -2572,6 +2613,9 @@ namespace ScoresApp.Droid
 			// aapt resource value: 0x7f080022
 			public const int dim_foreground_material_light = 2131230754;
 			
+			// aapt resource value: 0x7f080047
+			public const int fab_material_blue_500 = 2131230791;
+			
 			// aapt resource value: 0x7f080023
 			public const int foreground_material_dark = 2131230755;
 			
@@ -2626,11 +2670,11 @@ namespace ScoresApp.Droid
 			// aapt resource value: 0x7f080034
 			public const int material_grey_900 = 2131230772;
 			
-			// aapt resource value: 0x7f080047
-			public const int primary = 2131230791;
-			
 			// aapt resource value: 0x7f080048
-			public const int primaryDark = 2131230792;
+			public const int primary = 2131230792;
+			
+			// aapt resource value: 0x7f080049
+			public const int primaryDark = 2131230793;
 			
 			// aapt resource value: 0x7f080035
 			public const int primary_dark_material_dark = 2131230773;
@@ -2680,11 +2724,11 @@ namespace ScoresApp.Droid
 			// aapt resource value: 0x7f080044
 			public const int switch_thumb_disabled_material_light = 2131230788;
 			
-			// aapt resource value: 0x7f080055
-			public const int switch_thumb_material_dark = 2131230805;
-			
 			// aapt resource value: 0x7f080056
-			public const int switch_thumb_material_light = 2131230806;
+			public const int switch_thumb_material_dark = 2131230806;
+			
+			// aapt resource value: 0x7f080057
+			public const int switch_thumb_material_light = 2131230807;
 			
 			// aapt resource value: 0x7f080045
 			public const int switch_thumb_normal_material_dark = 2131230789;
@@ -2692,8 +2736,8 @@ namespace ScoresApp.Droid
 			// aapt resource value: 0x7f080046
 			public const int switch_thumb_normal_material_light = 2131230790;
 			
-			// aapt resource value: 0x7f08004a
-			public const int window_background = 2131230794;
+			// aapt resource value: 0x7f08004b
+			public const int window_background = 2131230795;
 			
 			static Color()
 			{
@@ -2993,6 +3037,21 @@ namespace ScoresApp.Droid
 			// aapt resource value: 0x7f06005f
 			public const int disabled_alpha_material_light = 2131099743;
 			
+			// aapt resource value: 0x7f06006a
+			public const int fab_elevation_lollipop = 2131099754;
+			
+			// aapt resource value: 0x7f060069
+			public const int fab_scroll_threshold = 2131099753;
+			
+			// aapt resource value: 0x7f060068
+			public const int fab_shadow_size = 2131099752;
+			
+			// aapt resource value: 0x7f060067
+			public const int fab_size_mini = 2131099751;
+			
+			// aapt resource value: 0x7f060066
+			public const int fab_size_normal = 2131099750;
+			
 			// aapt resource value: 0x7f060060
 			public const int highlight_alpha_material_colored = 2131099744;
 			
@@ -3220,145 +3279,151 @@ namespace ScoresApp.Droid
 			public const int design_snackbar_background = 2130837567;
 			
 			// aapt resource value: 0x7f020040
-			public const int ic_add_white = 2130837568;
+			public const int fab_shadow = 2130837568;
 			
 			// aapt resource value: 0x7f020041
-			public const int ic_arrow_downward = 2130837569;
+			public const int fab_shadow_mini = 2130837569;
 			
 			// aapt resource value: 0x7f020042
-			public const int ic_autorenew_48pt = 2130837570;
+			public const int ic_add_white = 2130837570;
 			
 			// aapt resource value: 0x7f020043
-			public const int ic_blur_circular_48pt = 2130837571;
+			public const int ic_arrow_downward = 2130837571;
 			
 			// aapt resource value: 0x7f020044
-			public const int ic_cast_dark = 2130837572;
+			public const int ic_autorenew_48pt = 2130837572;
 			
 			// aapt resource value: 0x7f020045
-			public const int ic_cast_disabled_light = 2130837573;
+			public const int ic_blur_circular_48pt = 2130837573;
 			
 			// aapt resource value: 0x7f020046
-			public const int ic_cast_light = 2130837574;
+			public const int ic_cast_dark = 2130837574;
 			
 			// aapt resource value: 0x7f020047
-			public const int ic_cast_off_light = 2130837575;
+			public const int ic_cast_disabled_light = 2130837575;
 			
 			// aapt resource value: 0x7f020048
-			public const int ic_cast_on_0_light = 2130837576;
+			public const int ic_cast_light = 2130837576;
 			
 			// aapt resource value: 0x7f020049
-			public const int ic_cast_on_1_light = 2130837577;
+			public const int ic_cast_off_light = 2130837577;
 			
 			// aapt resource value: 0x7f02004a
-			public const int ic_cast_on_2_light = 2130837578;
+			public const int ic_cast_on_0_light = 2130837578;
 			
 			// aapt resource value: 0x7f02004b
-			public const int ic_cast_on_light = 2130837579;
+			public const int ic_cast_on_1_light = 2130837579;
 			
 			// aapt resource value: 0x7f02004c
-			public const int ic_cloud_off_48pt = 2130837580;
+			public const int ic_cast_on_2_light = 2130837580;
 			
 			// aapt resource value: 0x7f02004d
-			public const int ic_favorite_48pt = 2130837581;
+			public const int ic_cast_on_light = 2130837581;
 			
 			// aapt resource value: 0x7f02004e
-			public const int ic_favorite_border_white = 2130837582;
+			public const int ic_cloud_off_48pt = 2130837582;
 			
 			// aapt resource value: 0x7f02004f
-			public const int ic_favorite_white = 2130837583;
+			public const int ic_favorite_48pt = 2130837583;
 			
 			// aapt resource value: 0x7f020050
-			public const int ic_launcher = 2130837584;
+			public const int ic_favorite_border_white = 2130837584;
 			
 			// aapt resource value: 0x7f020051
-			public const int ic_media_pause = 2130837585;
+			public const int ic_favorite_white = 2130837585;
 			
 			// aapt resource value: 0x7f020052
-			public const int ic_media_play = 2130837586;
+			public const int ic_launcher = 2130837586;
 			
 			// aapt resource value: 0x7f020053
-			public const int ic_media_route_disabled_mono_dark = 2130837587;
+			public const int ic_media_pause = 2130837587;
 			
 			// aapt resource value: 0x7f020054
-			public const int ic_media_route_off_mono_dark = 2130837588;
+			public const int ic_media_play = 2130837588;
 			
 			// aapt resource value: 0x7f020055
-			public const int ic_media_route_on_0_mono_dark = 2130837589;
+			public const int ic_media_route_disabled_mono_dark = 2130837589;
 			
 			// aapt resource value: 0x7f020056
-			public const int ic_media_route_on_1_mono_dark = 2130837590;
+			public const int ic_media_route_off_mono_dark = 2130837590;
 			
 			// aapt resource value: 0x7f020057
-			public const int ic_media_route_on_2_mono_dark = 2130837591;
+			public const int ic_media_route_on_0_mono_dark = 2130837591;
 			
 			// aapt resource value: 0x7f020058
-			public const int ic_media_route_on_mono_dark = 2130837592;
+			public const int ic_media_route_on_1_mono_dark = 2130837592;
 			
 			// aapt resource value: 0x7f020059
-			public const int ic_menu_white = 2130837593;
+			public const int ic_media_route_on_2_mono_dark = 2130837593;
 			
 			// aapt resource value: 0x7f02005a
-			public const int ic_pause_dark = 2130837594;
+			public const int ic_media_route_on_mono_dark = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int ic_pause_light = 2130837595;
+			public const int ic_menu_white = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int ic_play_dark = 2130837596;
+			public const int ic_pause_dark = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int ic_play_light = 2130837597;
+			public const int ic_pause_light = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int ic_remove_white = 2130837598;
+			public const int ic_play_dark = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int ic_setting_dark = 2130837599;
+			public const int ic_play_light = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int ic_setting_light = 2130837600;
+			public const int ic_remove_white = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int icon = 2130837601;
+			public const int ic_setting_dark = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int mr_ic_cast_dark = 2130837602;
+			public const int ic_setting_light = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int mr_ic_cast_light = 2130837603;
+			public const int icon = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int mr_ic_media_route_connecting_mono_dark = 2130837604;
+			public const int mr_ic_cast_dark = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int mr_ic_media_route_connecting_mono_light = 2130837605;
+			public const int mr_ic_cast_light = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public const int mr_ic_media_route_mono_dark = 2130837606;
+			public const int mr_ic_media_route_connecting_mono_dark = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public const int mr_ic_media_route_mono_light = 2130837607;
+			public const int mr_ic_media_route_connecting_mono_light = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public const int mr_ic_pause_dark = 2130837608;
+			public const int mr_ic_media_route_mono_dark = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int mr_ic_pause_light = 2130837609;
+			public const int mr_ic_media_route_mono_light = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int mr_ic_play_dark = 2130837610;
+			public const int mr_ic_pause_dark = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int mr_ic_play_light = 2130837611;
+			public const int mr_ic_pause_light = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int mr_ic_settings_dark = 2130837612;
+			public const int mr_ic_play_dark = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int mr_ic_settings_light = 2130837613;
+			public const int mr_ic_play_light = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int notification_template_icon_bg = 2130837614;
+			public const int mr_ic_settings_dark = 2130837614;
+			
+			// aapt resource value: 0x7f02006f
+			public const int mr_ic_settings_light = 2130837615;
+			
+			// aapt resource value: 0x7f020070
+			public const int notification_template_icon_bg = 2130837616;
 			
 			static Drawable()
 			{
@@ -5515,7 +5580,13 @@ namespace ScoresApp.Droid
 					2130772015,
 					2130772071,
 					2130772246,
-					2130772247};
+					2130772247,
+					2130772248,
+					2130772249,
+					2130772250,
+					2130772251,
+					2130772252,
+					2130772253};
 			
 			// aapt resource value: 0
 			public const int FloatingActionButton_android_background = 0;
@@ -5534,6 +5605,24 @@ namespace ScoresApp.Droid
 			
 			// aapt resource value: 2
 			public const int FloatingActionButton_fabSize = 2;
+			
+			// aapt resource value: 10
+			public const int FloatingActionButton_fab_colorDisabled = 10;
+			
+			// aapt resource value: 9
+			public const int FloatingActionButton_fab_colorNormal = 9;
+			
+			// aapt resource value: 8
+			public const int FloatingActionButton_fab_colorPressed = 8;
+			
+			// aapt resource value: 11
+			public const int FloatingActionButton_fab_colorRipple = 11;
+			
+			// aapt resource value: 12
+			public const int FloatingActionButton_fab_shadow = 12;
+			
+			// aapt resource value: 13
+			public const int FloatingActionButton_fab_size = 13;
 			
 			// aapt resource value: 3
 			public const int FloatingActionButton_pressedTranslationZ = 3;

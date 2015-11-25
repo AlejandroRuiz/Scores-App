@@ -42,27 +42,27 @@ namespace ScoresApp.Service
 			}
 
 			return Task.Run (() => {
-				return GetLeagueMatches(league);
+				return GetLeagueMatches(league, token.Token);
 			}, token.Token);
 		}
 
-		async Task<ObservableCollection<Fixture>> GetLeagueMatches(LeagueItem league)
+		async Task<ObservableCollection<Fixture>> GetLeagueMatches(LeagueItem league, CancellationToken ct)
 		{
 			try{
-				var resultFixtures = await _webClient.GetAsync("http://api.football-data.org/v1/fixtures/?league=" + league.Id);
+				var resultFixtures = await _webClient.GetAsync("http://api.football-data.org/v1/fixtures/?league=" + league.Id, ct);
 				if(resultFixtures.StatusCode == HttpStatusCode.OK)
 				{
 				var responseFixturesText = await resultFixtures.Content.ReadAsStringAsync();
 				Fixtures fixtures = JsonConvert.DeserializeObject<Fixtures>(responseFixturesText);
 
 					foreach (var match in fixtures.fixtures) {
-					var resulthomeTeam = await _webClient.GetAsync (match._links.homeTeam.href);
+						var resulthomeTeam = await _webClient.GetAsync (match._links.homeTeam.href,ct);
 						if (resulthomeTeam.StatusCode == HttpStatusCode.OK) {
 						var responhomeTeamText = await resulthomeTeam.Content.ReadAsStringAsync();
 						var team = JsonConvert.DeserializeObject<ScoresApp.Service.Responses.Team.Team> (responhomeTeamText);
 						match.homeTeamImage = team.crestUrl;
 						}
-					var resultawayTeam = await _webClient.GetAsync (match._links.awayTeam.href);
+						var resultawayTeam = await _webClient.GetAsync (match._links.awayTeam.href,ct);
 						if (resultawayTeam.StatusCode == HttpStatusCode.OK) {
 						var responawayTeamText = await resultawayTeam.Content.ReadAsStringAsync();
 						var team = JsonConvert.DeserializeObject<ScoresApp.Service.Responses.Team.Team> (responawayTeamText);

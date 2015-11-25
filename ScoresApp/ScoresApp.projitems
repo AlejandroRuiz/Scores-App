@@ -37,6 +37,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\FavoritesViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Defaults\Defaults.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dependencies\ISQLManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\FloatingActionButtonView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
