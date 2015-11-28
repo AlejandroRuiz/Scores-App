@@ -38,6 +38,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Defaults\Defaults.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Dependencies\ISQLManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\FloatingActionButtonView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\Responses\Fixture.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\FixtureViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Pages\" />

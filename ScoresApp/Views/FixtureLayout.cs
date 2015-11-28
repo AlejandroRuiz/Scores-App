@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using ScoresApp.Models;
+using ScoresApp.ViewModels;
 
 namespace ScoresApp.Views
 {
@@ -24,9 +25,9 @@ namespace ScoresApp.Views
 
 		FixtureCardView _mainCardView { get; set; }
 
-		Fixture Fixture{
+		FixtureViewModel Fixture{
 			get{
-				return BindingContext as Fixture;
+				return BindingContext as FixtureViewModel;
 			}
 		}
 

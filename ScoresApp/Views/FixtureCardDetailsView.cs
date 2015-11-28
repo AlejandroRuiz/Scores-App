@@ -12,7 +12,7 @@ namespace ScoresApp.Views
 
 		SvgImage _teamImage;
 
-		Label _teamGoals;
+		public Label TeamGoals;
 
 		public FixtureCardDetailsView (FixtureTeam team)
 		{
@@ -24,7 +24,7 @@ namespace ScoresApp.Views
 				VerticalOptions = LayoutOptions.CenterAndExpand
 			};
 
-			_teamGoals = new Label () {
+			TeamGoals = new Label () {
 				Text = team?.TeamGoals.ToString(),
 				FontSize = 15,
 				FontFamily = "AvenirNext-DemiBold",
@@ -54,7 +54,7 @@ namespace ScoresApp.Views
 				Children = {
 					_teamImage,
 					_teamName,
-					_teamGoals
+					TeamGoals
 				}
 			};
 
@@ -65,7 +65,6 @@ namespace ScoresApp.Views
 		{
 			_teamName.Text = team?.TeamName;
 			_teamImage.SvgPath = team?.TeamImage;
-			_teamGoals.Text = team?.TeamGoals.ToString();
 		}
 	}
 }

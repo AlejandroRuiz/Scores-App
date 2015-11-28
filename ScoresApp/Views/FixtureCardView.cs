@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using ScoresApp.Models;
+using ScoresApp.ViewModels;
 
 namespace ScoresApp.Views
 {
@@ -10,10 +11,15 @@ namespace ScoresApp.Views
 
 		FixtureCardDetailsView _awayTeamDetails { get; set; }
 
-		public FixtureCardView (Fixture fixture)
+		public FixtureCardView (FixtureViewModel fixture)
 		{
-			_homeTeamDetails = new FixtureCardDetailsView (fixture?.HomeTeam);
-			_awayTeamDetails = new FixtureCardDetailsView (fixture?.AwayTeam);
+			_homeTeamDetails = new FixtureCardDetailsView (fixture?.Fixture?.HomeTeam);
+			_homeTeamDetails.TeamGoals.BindingContext = fixture;
+			_homeTeamDetails.TeamGoals.SetBinding (Label.TextProperty, nameof(fixture?.HomeTeamGoals));
+
+			_awayTeamDetails = new FixtureCardDetailsView (fixture?.Fixture?.AwayTeam);
+			_awayTeamDetails.TeamGoals.BindingContext = fixture;
+			_awayTeamDetails.TeamGoals.SetBinding (Label.TextProperty, nameof(fixture?.AwayTeamGoals));
 
 			Grid grid = new Grid {
 				Padding = new Thickness(0,1,1,1),
@@ -65,10 +71,13 @@ namespace ScoresApp.Views
 			Content = mainContent;
 		}
 
-		public void SetCardData(Fixture fixture)
+		public void SetCardData(FixtureViewModel fixture)
 		{
-			_homeTeamDetails.SetDetailViewData(fixture?.HomeTeam);
-			_awayTeamDetails.SetDetailViewData(fixture?.AwayTeam);
+			_homeTeamDetails.TeamGoals.BindingContext = fixture;
+			_awayTeamDetails.TeamGoals.BindingContext = fixture;
+
+			_homeTeamDetails.SetDetailViewData(fixture?.Fixture.HomeTeam);
+			_awayTeamDetails.SetDetailViewData(fixture?.Fixture.AwayTeam);
 		}
 
 		void OnMediaViewTapped()

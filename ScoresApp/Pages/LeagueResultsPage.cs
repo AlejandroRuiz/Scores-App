@@ -12,6 +12,7 @@ using System.Collections;
 using System.Collections.ObjectModel;
 using System.Threading;
 using Xamarin;
+using ScoresApp.ViewModels;
 
 namespace ScoresApp.Pages
 {
@@ -137,6 +138,8 @@ namespace ScoresApp.Pages
 		{
 			base.OnAppearing ();
 
+			StartTimer ();
+
 			Insights.Track(InsightsConstants.LeagueResultsPage);
 
 			cts = new CancellationTokenSource ();
@@ -150,13 +153,86 @@ namespace ScoresApp.Pages
 		void _fixturesListView_ItemAppearing (object sender, ItemVisibilityEventArgs e)
 		{
 			if (Device.OS == TargetPlatform.Android) {
-				if (e.Item == (_fixturesListView.ItemsSource as ObservableCollection<Fixture>).Last()) {
+				if (e.Item == (_fixturesListView.ItemsSource as ObservableCollection<FixtureViewModel>).Last()) {
 					fab.Hide ();
 				} else {
 					fab.Show ();
 				}
 			}
 		}
+
+		#region AutoUpdate
+		bool _isBusy;
+
+		bool _isAutoUpdateEnable;
+
+		bool _isStopTimerRequested;
+
+		void StartAutoUpdate()
+		{
+			_isAutoUpdateEnable = true;
+		}
+
+		void PauseAutoUpdate()
+		{
+			_isAutoUpdateEnable = false;
+		}
+
+		void StopAutoUpdate()
+		{
+			_isStopTimerRequested = true;
+		}
+
+		void StartTimer()
+		{
+			StartAutoUpdate ();
+			Device.StartTimer (TimeSpan.FromSeconds(30), OnUpdate);
+		}
+
+		bool OnUpdate()
+		{
+			if (_isAutoUpdateEnable) {
+				if (ReadyToUpdate ()) {
+					if (!_isBusy) {
+						_isBusy = true;
+						BeginUpdate ();
+					}
+				}
+			}
+			return !_isStopTimerRequested;
+		}
+
+		Task BeginUpdate()
+		{
+			return Task.Run(async()=>{
+				if(cts != null){
+				var result = await ScoresApp.Service.WebService.Default.GetLeagueMatches (Item.Id, false, cts);
+				if (ReadyToUpdate ()) {
+					foreach (var fixture in result) {
+						var listData = _fixturesListView.ItemsSource as ObservableCollection<FixtureViewModel>;
+							var viewModelToUpdate = listData.FirstOrDefault (i => i.Fixture.Id == fixture.Fixture.Id);
+						if (viewModelToUpdate != null) {
+							viewModelToUpdate.UpdateGoals (fixture);
+						}
+					}
+				}
+				}
+			_isBusy = false;
+			});
+		}
+
+		bool ReadyToUpdate()
+		{
+			if (_fixturesListView.ItemsSource != null) {
+				if (_fixturesListView.ItemsSource is ObservableCollection<FixtureViewModel>) {
+					if ((_fixturesListView.ItemsSource as ObservableCollection<FixtureViewModel>).Count > 0) {
+						return true;
+					}
+				}
+			}
+			return false;
+		}
+		#endregion
 
 		CancellationTokenSource cts;
 
@@ -189,8 +265,10 @@ namespace ScoresApp.Pages
 					_loadingDataView.RotateImage();
 			});
 
-			var result = await ScoresApp.Service.WebService.Default.GetLeagueMatches (Item, cts);
+			PauseAutoUpdate ();
+			var result = await ScoresApp.Service.WebService.Default.GetLeagueMatches (Item.Id, true, cts);
 			_fixturesListView.ItemsSource = result;
+			StartAutoUpdate ();
 
 			Device.BeginInvokeOnMainThread(async()=>{
 				_fixturesListView.EndRefresh();
@@ -278,6 +356,7 @@ namespace ScoresApp.Pages
 		protected override void OnDisappearing ()
 		{
 			base.OnDisappearing ();
+			StopAutoUpdate ();
 			if (cts != null) {
 				cts.Cancel();
 				cts = new CancellationTokenSource();

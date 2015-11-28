@@ -61,7 +61,6 @@ namespace ScoresApp.Service.Responses
 			public string awayTeamImage { get; set; }
 			public Result result { get; set; }
 		}
-
 	}
 }
 

@@ -14,7 +14,8 @@ namespace ScoresApp.ViewModels
 
 		protected virtual void OnPropertyChanged([CallerMemberName] string caller = null)
 		{
-			PropertyChanged (this, new PropertyChangedEventArgs (caller));
+			if(PropertyChanged != null)
+				PropertyChanged (this, new PropertyChangedEventArgs (caller));
 		}
 	}
 
