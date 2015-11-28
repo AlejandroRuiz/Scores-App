@@ -18,7 +18,7 @@ namespace ScoresApp.Pages
 {
 	public class LeagueResultsPage:ContentPage
 	{
-		public LeagueItem Item
+		public LeagueItem League
 		{
 			get{
 				return BindingContext as LeagueItem;
@@ -93,7 +93,7 @@ namespace ScoresApp.Pages
 				}
 			};
 			if (Device.OS == TargetPlatform.iOS) {
-				var isfavorite = Item.IsFavorite;
+				var isfavorite = League.IsFavorite;
 				_addItem = new ToolbarItem ();
 				_addItem.Text = isfavorite ? "remove" : "add";
 				_addItem.Clicked += _addItem_Clicked;
@@ -114,22 +114,22 @@ namespace ScoresApp.Pages
 
 		async void _addItem_Clicked (object sender, EventArgs e)
 		{
-			var isfavorite = Item.IsFavorite;
-			var detailText = "Do you want to "+ (isfavorite ? "remove" : "add")+" " + Item.Text + " " + (isfavorite ? "from" : "to") + " your favorites?";
+			var isfavorite = League.IsFavorite;
+			var detailText = "Do you want to "+ (isfavorite ? "remove" : "add")+" " + League.Text + " " + (isfavorite ? "from" : "to") + " your favorites?";
 			var result = await DisplayAlert (Strings.AppName, detailText, "Ok", "Cancel");
 			if (result) {
 				if (!isfavorite)
-					SqlManager.Cache.AddToFavorite (Item);
+					SqlManager.Cache.AddToFavorite (League);
 				else
-					SqlManager.Cache.RemeveFromFavorite (Item);
-				_addItem.Icon = Item.IsFavorite ? "ic_favorite_white" : "ic_favorite_border_white";
+					SqlManager.Cache.RemeveFromFavorite (League);
+				_addItem.Icon = League.IsFavorite ? "ic_favorite_white" : "ic_favorite_border_white";
 			}
 		}
 
 		public LeagueResultsPage (LeagueItem leagueItem)
 		{
 			BindingContext = leagueItem;
-			Title = Item.Text;
+			Title = League.Text;
 			BackgroundColor = ScoresAppStyleKit.PageBackgroundColor;
 			CreateLayout ();
 		}
@@ -137,7 +137,7 @@ namespace ScoresApp.Pages
 		protected override void OnAppearing ()
 		{
 			base.OnAppearing ();
-
+			Title = League.Text;
 			StartTimer ();
 
 			Insights.Track(InsightsConstants.LeagueResultsPage);
@@ -147,7 +147,9 @@ namespace ScoresApp.Pages
 			_fixturesListView.ItemTapped += _fixturesListView_ItemTapped;
 			_fixturesListView.Refreshing += _fixturesListView_Refreshing;
 			_mainNoDataLayout.Refreshing += _fixturesListView_Refreshing;
-			_fixturesListView.BeginRefresh ();
+
+			if(Content  != _fixturesListView)
+				_fixturesListView.BeginRefresh ();
 		}
 
 		void _fixturesListView_ItemAppearing (object sender, ItemVisibilityEventArgs e)
@@ -206,7 +208,7 @@ namespace ScoresApp.Pages
 		{
 			return Task.Run(async()=>{
 				if(cts != null){
-				var result = await ScoresApp.Service.WebService.Default.GetLeagueMatches (Item.Id, false, cts);
+					var result = await ScoresApp.Service.WebService.Default.GetLeagueMatches (League.Id, false, cts);
 				if (ReadyToUpdate ()) {
 					foreach (var fixture in result) {
 						var listData = _fixturesListView.ItemsSource as ObservableCollection<FixtureViewModel>;
@@ -266,7 +268,7 @@ namespace ScoresApp.Pages
 			});
 
 			PauseAutoUpdate ();
-			var result = await ScoresApp.Service.WebService.Default.GetLeagueMatches (Item.Id, true, cts);
+			var result = await ScoresApp.Service.WebService.Default.GetLeagueMatches (League.Id, true, cts);
 			_fixturesListView.ItemsSource = result;
 			StartAutoUpdate ();
 
@@ -298,15 +300,15 @@ namespace ScoresApp.Pages
 
 		async void FabAction()
 		{
-			var isfavorite = Item.IsFavorite;
-			var detailText = "Do you want to "+ (isfavorite ? "remove" : "add")+" " + Item.Text + " " + (isfavorite ? "from" : "to") + " your favorites?";
+			var isfavorite = League.IsFavorite;
+			var detailText = "Do you want to "+ (isfavorite ? "remove" : "add")+" " + League.Text + " " + (isfavorite ? "from" : "to") + " your favorites?";
 			var result = await DisplayAlert (Strings.AppName, detailText, "Ok", "Cancel");
 			if (result) {
 				if (!isfavorite)
-					SqlManager.Cache.AddToFavorite (Item);
+					SqlManager.Cache.AddToFavorite (League);
 				else
-					SqlManager.Cache.RemeveFromFavorite (Item);
-				fab.ImageName = Item.IsFavorite ? "ic_favorite_white" : "ic_favorite_border_white";
+					SqlManager.Cache.RemeveFromFavorite (League);
+				fab.ImageName = League.IsFavorite ? "ic_favorite_white" : "ic_favorite_border_white";
 			}
 		}
 
@@ -325,7 +327,7 @@ namespace ScoresApp.Pages
 
 			fab = new FloatingActionButtonView
 			{
-				ImageName = Item.IsFavorite ? "ic_favorite_white" : "ic_favorite_border_white",
+				ImageName = League.IsFavorite ? "ic_favorite_white" : "ic_favorite_border_white",
 				ColorNormal = Color.FromHex("009688"),
 				ColorPressed = Color.FromHex("80CBC4"),
 				ColorRipple = Color.FromHex("E0F2F1"),
@@ -377,9 +379,11 @@ namespace ScoresApp.Pages
 			await LoadFixtures ();
 		}
 
-		void _fixturesListView_ItemTapped (object sender, ItemTappedEventArgs e)
+		async void _fixturesListView_ItemTapped (object sender, ItemTappedEventArgs e)
 		{
 			_fixturesListView.SelectedItem = null;
+			this.Title = "";
+			await Navigation.PushAsync (new MatchDetailPage(e.Item as FixtureViewModel));
 		}
 	}
 }

@@ -18,12 +18,14 @@ namespace ScoresApp.Extensions
 						HomeTeam = new ScoresApp.Models.FixtureTeam{
 							TeamName = responsefixture.homeTeamName,
 							TeamGoals = (responsefixture.result.goalsHomeTeam.HasValue) ? responsefixture.result.goalsHomeTeam.Value : 0,
-							TeamImage = responsefixture.homeTeamImage
+							TeamImage = responsefixture.homeTeamImage,
+							ShortName = responsefixture.homeShortTeamName
 						},
 						AwayTeam = new ScoresApp.Models.FixtureTeam{
 							TeamName = responsefixture.awayTeamName,
 							TeamGoals = (responsefixture.result.goalsAwayTeam.HasValue) ? responsefixture.result.goalsAwayTeam.Value : 0,
-							TeamImage = responsefixture.awayTeamImage
+							TeamImage = responsefixture.awayTeamImage,
+							ShortName = responsefixture.awayShortTeamName
 						}
 					};
 
@@ -35,7 +37,7 @@ namespace ScoresApp.Extensions
 
 		public static ScoresApp.Models.Fixture ToAppFixture(this ScoresApp.Service.Responses.SingleFixture fixture)
 		{
-			return new ScoresApp.Models.Fixture {
+			 var data = new ScoresApp.Models.Fixture {
 				Date = fixture.fixture.date,
 				Status = fixture.fixture.status,
 				MatchDay = fixture.fixture.matchday,
@@ -49,6 +51,26 @@ namespace ScoresApp.Extensions
 					TeamGoals = (fixture.fixture.result.goalsAwayTeam.HasValue) ? fixture.fixture.result.goalsAwayTeam.Value : 0,
 					TeamImage = fixture.fixture.awayTeamImage
 				}
+			};
+			foreach (var homplayer in fixture.homePlayers) {
+				data.HomeTeam.Players.Add (homplayer.ToAppTeamPlayer ());
+			}
+			foreach (var awayplayer in fixture.awayPlayers) {
+				data.AwayTeam.Players.Add (awayplayer.ToAppTeamPlayer ());
+			}
+			return data;
+		}
+
+		public static ScoresApp.Models.TeamPlayer ToAppTeamPlayer(this ScoresApp.Service.Responses.Player player)
+		{
+			return new ScoresApp.Models.TeamPlayer {
+				Name = player.name,
+				Position =player.position,
+				JerseyNumber = player.jerseyNumber,
+				DateOfBirth = player.dateOfBirth,
+				Nationality = player.nationality,
+				ContractUntil = player.contractUntil,
+				MarketValue = player.marketValue
 			};
 		}
 	}

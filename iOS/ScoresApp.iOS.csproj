@@ -186,6 +186,9 @@
     <BundleResource Include="Resources\ic_favorite_white.png" />
     <BundleResource Include="Resources\ic_favorite_white%402x.png" />
     <BundleResource Include="Resources\ic_favorite_white%403x.png" />
+    <BundleResource Include="Resources\ic_account_circle.png" />
+    <BundleResource Include="Resources\ic_account_circle%402x.png" />
+    <BundleResource Include="Resources\ic_account_circle%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />

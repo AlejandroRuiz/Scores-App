@@ -40,6 +40,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Controls\FloatingActionButtonView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Service\Responses\Fixture.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\FixtureViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\MatchDetailPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Service\Responses\Players.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\TeamPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Pages\" />

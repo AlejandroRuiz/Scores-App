@@ -180,6 +180,10 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_favorite_white.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_favorite_border_white.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_favorite_white.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_account_circle.png" />
+    <AndroidResource Include="Resources\drawable\ic_account_circle.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_account_circle.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_account_circle.png" />
   </ItemGroup>
   <Import Project="..\ScoresApp\ScoresApp.projitems" Label="Shared" Condition="Exists('..\ScoresApp\ScoresApp.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

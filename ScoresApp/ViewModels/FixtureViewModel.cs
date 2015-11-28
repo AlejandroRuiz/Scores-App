@@ -61,6 +61,16 @@ namespace ScoresApp.ViewModels
 			}
 		}
 
+		public string MatchTitle
+		{
+			get{
+				var title = Fixture?.HomeTeam?.ShortName;
+				title += " vs ";
+				title += Fixture?.AwayTeam?.ShortName;
+				return title;
+			}
+		}
+
 
 		public FixtureViewModel (Fixture fixture)
 		{
