@@ -47,33 +47,35 @@ namespace ScoresApp.Pages
 
 			_homeTeamPlayers = new ListView{
 				BackgroundColor = Color.White,
-				ItemTemplate = new DataTemplate(typeof(ImageCell)),
-				SeparatorVisibility = SeparatorVisibility.None,
+				ItemTemplate = new DataTemplate(typeof(TextCell)),
+				//SeparatorVisibility = SeparatorVisibility.None,
+				SeparatorColor = ScoresAppStyleKit.MenuBackgroundColor,
 				Header = GetHeader(),
 				VerticalOptions = LayoutOptions.FillAndExpand
 			};
-			_homeTeamPlayers.ItemTemplate.SetBinding (ImageCell.ImageSourceProperty, nameof (TeamPlayer.DummyPlayer.Icon));
+			//_homeTeamPlayers.ItemTemplate.SetBinding (TextCell.ImageSourceProperty, nameof (TeamPlayer.DummyPlayer.Icon));
 
-			_homeTeamPlayers.ItemTemplate.SetBinding (ImageCell.TextProperty, nameof (TeamPlayer.DummyPlayer.Title));
-			_homeTeamPlayers.ItemTemplate.SetBinding (ImageCell.TextColorProperty, nameof (TeamPlayer.DummyPlayer.TextColor));
+			_homeTeamPlayers.ItemTemplate.SetBinding (TextCell.TextProperty, nameof (TeamPlayer.DummyPlayer.Title));
+			_homeTeamPlayers.ItemTemplate.SetBinding (TextCell.TextColorProperty, nameof (TeamPlayer.DummyPlayer.TextColor));
 
-			_homeTeamPlayers.ItemTemplate.SetBinding (ImageCell.DetailProperty, nameof (TeamPlayer.DummyPlayer.Detail));
-			_homeTeamPlayers.ItemTemplate.SetBinding (ImageCell.DetailColorProperty, nameof (TeamPlayer.DummyPlayer.DescriptionColor));
+			_homeTeamPlayers.ItemTemplate.SetBinding (TextCell.DetailProperty, nameof (TeamPlayer.DummyPlayer.Detail));
+			_homeTeamPlayers.ItemTemplate.SetBinding (TextCell.DetailColorProperty, nameof (TeamPlayer.DummyPlayer.DescriptionColor));
 
-			_awayTeamPlayers = new ListView{
+			_awayTeamPlayers = new ListView {
 				BackgroundColor = Color.White,
-				ItemTemplate = new DataTemplate(typeof(ImageCell)),
-				SeparatorVisibility = SeparatorVisibility.None,
+				ItemTemplate = new DataTemplate(typeof(TextCell)),
+				//SeparatorVisibility = SeparatorVisibility.None,
+				SeparatorColor = ScoresAppStyleKit.MenuBackgroundColor,
 				Header = GetHeader(),
 				VerticalOptions = LayoutOptions.FillAndExpand
 			};
-			_awayTeamPlayers.ItemTemplate.SetBinding (ImageCell.ImageSourceProperty, nameof (TeamPlayer.DummyPlayer.Icon));
+			//_awayTeamPlayers.ItemTemplate.SetBinding (TextCell.ImageSourceProperty, nameof (TeamPlayer.DummyPlayer.Icon));
 
-			_awayTeamPlayers.ItemTemplate.SetBinding (ImageCell.TextProperty, nameof (TeamPlayer.DummyPlayer.Title));
-			_awayTeamPlayers.ItemTemplate.SetBinding (ImageCell.TextColorProperty, nameof (TeamPlayer.DummyPlayer.TextColor));
+			_awayTeamPlayers.ItemTemplate.SetBinding (TextCell.TextProperty, nameof (TeamPlayer.DummyPlayer.Title));
+			_awayTeamPlayers.ItemTemplate.SetBinding (TextCell.TextColorProperty, nameof (TeamPlayer.DummyPlayer.TextColor));
 
-			_awayTeamPlayers.ItemTemplate.SetBinding (ImageCell.DetailProperty, nameof (TeamPlayer.DummyPlayer.Detail));
-			_awayTeamPlayers.ItemTemplate.SetBinding (ImageCell.DetailColorProperty, nameof (TeamPlayer.DummyPlayer.DescriptionColor));
+			_awayTeamPlayers.ItemTemplate.SetBinding (TextCell.DetailProperty, nameof (TeamPlayer.DummyPlayer.Detail));
+			_awayTeamPlayers.ItemTemplate.SetBinding (TextCell.DetailColorProperty, nameof (TeamPlayer.DummyPlayer.DescriptionColor));
 
 			if(Device.OS == TargetPlatform.iOS){
 				_homeTeamPlayers.RowHeight = 50;

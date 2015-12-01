@@ -75,6 +75,7 @@ namespace ScoresApp.iOS.Renderers
 
 		async void UpdateSVGSource()
 		{
+			Control.ContentMode = UIViewContentMode.ScaleAspectFit;
 			Uri u;
 			try{
 				u = new Uri (_formsControl.SvgPath);

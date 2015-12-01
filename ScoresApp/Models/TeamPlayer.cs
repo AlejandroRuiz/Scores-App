@@ -42,7 +42,7 @@ namespace ScoresApp.Models
 		public string Icon
 		{
 			get{
-				return "ic_account_circle";
+				return Device.OnPlatform (/*"ic_account_circle"*/"", "", "");
 			}
 		}
 

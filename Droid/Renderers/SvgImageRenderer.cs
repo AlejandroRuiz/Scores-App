@@ -163,7 +163,7 @@ namespace ScoresApp.Droid.Renderers
 									return;
 								}
 
-								imageView.SetScaleType(ImageView.ScaleType.FitXy);
+								imageView.SetScaleType(ImageView.ScaleType.CenterInside);
 								imageView.SetImageBitmap(taskResult.Result.Bitmap);
 							});
 
