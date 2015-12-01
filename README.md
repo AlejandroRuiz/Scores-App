@@ -45,4 +45,7 @@ Android - https://youtu.be/A8AFpMHKr-o
 <img src="https://github.com/AlejandroRuiz/Scores-App/blob/master/Screenshots/Android/nodata_android.png?raw=true" Width="360" />
 <img src="https://github.com/AlejandroRuiz/Scores-App/blob/master/Screenshots/iOS/nodata_ios.png?raw=true" Width="360" />
 
-*****All trademarks and images are property of their respective owners*****
+<img src="https://github.com/AlejandroRuiz/Scores-App/blob/master/Screenshots/Android/match_android.png?raw=true" Width="360" />
+<img src="https://github.com/AlejandroRuiz/Scores-App/blob/master/Screenshots/iOS/match_ios.png?raw=true" Width="360" />
+
+*****All names, trademarks and images are property of their respective owners*****
