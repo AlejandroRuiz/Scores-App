@@ -37,11 +37,13 @@ namespace ScoresApp.Pages
 			_menuListView = new ListView {
 				BindingContext = ViewModel,
 				ItemTemplate = new DataTemplate(typeof(ImageCell)),
-				RowHeight = 50,
 				SeparatorVisibility = SeparatorVisibility.None,
 				VerticalOptions = LayoutOptions.Start,
 				BackgroundColor = ScoresAppStyleKit.MenuBackgroundColor
 			};
+
+			if (Device.OS == TargetPlatform.iOS)
+				_menuListView.RowHeight = 50;
 
 			_mainLayout = new StackLayout {
 				Padding = new Thickness(10,30,10,30),
