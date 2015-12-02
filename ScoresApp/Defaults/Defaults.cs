@@ -75,6 +75,13 @@ namespace ScoresApp.Defaults
 
 	public static class InsightsConstants
 	{
+		public static string MatchDetailPage
+		{
+			get{
+				return "Match Detail Page";
+			}
+		}
+
 		public static string LeagueResultsPage
 		{
 			get{

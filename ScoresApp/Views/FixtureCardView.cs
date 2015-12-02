@@ -22,10 +22,10 @@ namespace ScoresApp.Views
 			_awayTeamDetails.TeamGoals.SetBinding (Label.TextProperty, nameof(fixture?.AwayTeamGoals));
 
 			Grid grid = new Grid {
-				Padding = new Thickness(0,1,1,1),
+				Padding = new Thickness(1,1,2,2),
 				RowSpacing = 1,
 				ColumnSpacing = 0,		
-				BackgroundColor = Color.Transparent,
+				BackgroundColor = Color.FromHex ("E3E3E3").MultiplyAlpha(0.5),
 				VerticalOptions = LayoutOptions.FillAndExpand,
 				RowDefinitions = {
 					new RowDefinition { Height = new GridLength (50, GridUnitType.Absolute) },
@@ -45,30 +45,7 @@ namespace ScoresApp.Views
 
 			grid.Children.Add (_awayTeamDetails, 1, 1);
 
-			var mainContent = new RelativeLayout (){
-				BackgroundColor = Color.White,
-				HeightRequest = 160,
-				WidthRequest = 300,
-				VerticalOptions = LayoutOptions.Center,
-				HorizontalOptions = LayoutOptions.CenterAndExpand
-			};
-
-			mainContent.Children.Add(grid,
-				Constraint.Constant(0),
-				Constraint.Constant(0),
-				Constraint.RelativeToParent ((parent) => {
-					return parent.Width;
-				}),
-				Constraint.RelativeToParent ((parent) => {
-					return parent.Height;
-				})
-			);
-
-			var gestureRecognizer = new TapGestureRecognizer ();
-			gestureRecognizer.Command = new Command (OnMediaViewTapped);
-			gestureRecognizer.NumberOfTapsRequired = 1;
-			grid.GestureRecognizers.Add (gestureRecognizer);
-			Content = mainContent;
+			Content = grid;
 		}
 
 		public void SetCardData(FixtureViewModel fixture)
@@ -78,10 +55,6 @@ namespace ScoresApp.Views
 
 			_homeTeamDetails.SetDetailViewData(fixture?.Fixture.HomeTeam);
 			_awayTeamDetails.SetDetailViewData(fixture?.Fixture.AwayTeam);
-		}
-
-		void OnMediaViewTapped()
-		{
 		}
 
 	}

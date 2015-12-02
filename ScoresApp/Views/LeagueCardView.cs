@@ -19,10 +19,10 @@ namespace ScoresApp.Views
 			BindingContext = context;
 
 			Grid grid = new Grid {
-				Padding = new Thickness(0,0,2,2),
+				Padding = new Thickness(1,1,2,2),
 				RowSpacing = 0,
 				ColumnSpacing = 0,		
-				BackgroundColor = Color.FromHex ("E3E3E3").MultiplyAlpha(0.75),
+				BackgroundColor = Color.FromHex ("E3E3E3").MultiplyAlpha(0.5),
 				RowDefinitions = {
 					new RowDefinition { Height = new GridLength (100, GridUnitType.Absolute) }
 				},

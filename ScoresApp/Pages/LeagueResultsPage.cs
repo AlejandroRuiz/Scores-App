@@ -148,8 +148,16 @@ namespace ScoresApp.Pages
 			_fixturesListView.Refreshing += _fixturesListView_Refreshing;
 			_mainNoDataLayout.Refreshing += _fixturesListView_Refreshing;
 
-			if(Content  != _fixturesListView)
+			if(absoluteAndroid != null) {
+				if ((Content as AbsoluteLayout).Children[0] != _fixturesListView) {
+					_fixturesListView.BeginRefresh ();
+				}
+				return;
+			}
+
+			if (Content != _fixturesListView) {
 				_fixturesListView.BeginRefresh ();
+			}
 		}
 
 		void _fixturesListView_ItemAppearing (object sender, ItemVisibilityEventArgs e)
@@ -312,6 +320,8 @@ namespace ScoresApp.Pages
 			}
 		}
 
+		AbsoluteLayout absoluteAndroid;
+
 		async void DroidLayout(View mainView)
 		{
 			if (this.Content is AbsoluteLayout) {
@@ -334,7 +344,7 @@ namespace ScoresApp.Pages
 				Clicked = (sender, args) => FabAction(),
 			};
 
-			var absolute = new AbsoluteLayout
+			absoluteAndroid = new AbsoluteLayout
 			{ 
 				VerticalOptions = LayoutOptions.FillAndExpand, 
 				HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -344,14 +354,14 @@ namespace ScoresApp.Pages
 			// Manage positioning of child elements on the page by editing the pageLayout.
 			AbsoluteLayout.SetLayoutFlags(mainView, AbsoluteLayoutFlags.All);
 			AbsoluteLayout.SetLayoutBounds(mainView, new Rectangle(0f, 0f, 1f, 1f));
-			absolute.Children.Add(mainView);
+			absoluteAndroid.Children.Add(mainView);
 
 			// Overlay the FAB in the bottom-right corner
 			AbsoluteLayout.SetLayoutFlags(fab, AbsoluteLayoutFlags.PositionProportional);
 			AbsoluteLayout.SetLayoutBounds(fab, new Rectangle(1f, 1f, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
-			absolute.Children.Add(fab);
+			absoluteAndroid.Children.Add(fab);
 
-			Content = absolute;
+			Content = absoluteAndroid;
 			await mainView.FadeTo (1, (uint)Integers.AnimationSpeed,  Easing.SinIn);
 		}
 
@@ -383,7 +393,7 @@ namespace ScoresApp.Pages
 		{
 			_fixturesListView.SelectedItem = null;
 			this.Title = "";
-			await Navigation.PushAsync (new MatchDetailPage(e.Item as FixtureViewModel));
+			await Navigation.PushAsync (new MatchDetailPage(e.Item as FixtureViewModel), true);
 		}
 	}
 }

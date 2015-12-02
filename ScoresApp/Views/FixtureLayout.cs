@@ -17,6 +17,8 @@ namespace ScoresApp.Views
 		{
 			_mainCardView = new FixtureCardView (Fixture);
 			View = new StackLayout {
+				Padding = new Thickness(15),
+				BackgroundColor = Color.White,
 				Children = {
 					_mainCardView
 				}

@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using ScoresApp.Service;
 using System.Threading;
 using ScoresApp.Models;
+using Xamarin;
+using ScoresApp.Defaults;
 
 namespace ScoresApp.Pages
 {
@@ -209,6 +211,9 @@ namespace ScoresApp.Pages
 		protected async override void OnAppearing ()
 		{
 			base.OnAppearing ();
+
+			Insights.Track(InsightsConstants.MatchDetailPage);
+
 			cts = new CancellationTokenSource ();
 			_homeTeamPlayers.ItemTapped += _homeTeamPlayers_ItemTapped;
 			_awayTeamPlayers.ItemTapped += _awayTeamPlayers_ItemTapped;

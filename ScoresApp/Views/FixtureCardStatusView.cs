@@ -9,8 +9,8 @@ namespace ScoresApp
 		public FixtureCardStatusView ()
 		{
 			var statusBoxView = new BoxView {
-				VerticalOptions = LayoutOptions.Fill,
-				HorizontalOptions = LayoutOptions.Fill
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
 					
 			statusBoxView.BackgroundColor = ScoresAppStyleKit.FixtureStatusColor;
