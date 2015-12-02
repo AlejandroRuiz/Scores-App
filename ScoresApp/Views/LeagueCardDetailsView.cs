@@ -29,7 +29,9 @@ namespace ScoresApp
 				FontSize = 15,
 				FontFamily = "AvenirNext-DemiBold",
 				TextColor = LeagueItem.Favorites.TextColor,
-				HorizontalTextAlignment = TextAlignment.Center
+				HorizontalTextAlignment = TextAlignment.Center,
+				IsEnabled = true,
+				InputTransparent = true
 			};
 
 			_leagueCountryLabel = new Label {
@@ -37,7 +39,9 @@ namespace ScoresApp
 				FontSize = 10,
 				FontFamily = "AvenirNext-DemiBold",
 				TextColor = LeagueItem.Favorites.DescriptionColor,
-				HorizontalTextAlignment = TextAlignment.Center
+				HorizontalTextAlignment = TextAlignment.Center,
+				IsEnabled = true,
+				InputTransparent = true
 			};
 
 			_flagImage = new Image {
@@ -45,12 +49,18 @@ namespace ScoresApp
 				VerticalOptions = LayoutOptions.FillAndExpand,
 				Aspect = Aspect.AspectFill,
 				WidthRequest = 120,
-				HorizontalOptions = LayoutOptions.Start
+				HorizontalOptions = LayoutOptions.Start,
+				IsEnabled = true,
+				InputTransparent = true
 			};
 
 			Content = new StackLayout {
+				HeightRequest = 100,
+				HorizontalOptions = LayoutOptions.Fill,
 				BackgroundColor = ScoresAppStyleKit.PageBackgroundColor,
 				Orientation = StackOrientation.Horizontal,
+				IsEnabled = true,
+				InputTransparent = true,
 				Children = {
 					_flagImage,
 					new StackLayout {
@@ -60,7 +70,9 @@ namespace ScoresApp
 						Children = {
 							_leagueNameLabel,
 							_leagueCountryLabel
-						}
+						},
+						IsEnabled = true,
+						InputTransparent = true
 					}
 				}
 			};

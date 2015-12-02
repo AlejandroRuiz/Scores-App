@@ -19,57 +19,32 @@ namespace ScoresApp.Views
 			BindingContext = context;
 
 			Grid grid = new Grid {
-				Padding = new Thickness(0,0,1,1),
+				Padding = new Thickness(0,0,2,2),
 				RowSpacing = 0,
 				ColumnSpacing = 0,		
-				BackgroundColor = Color.FromHex ("E3E3E3"),
+				BackgroundColor = Color.FromHex ("E3E3E3").MultiplyAlpha(0.75),
 				RowDefinitions = {
 					new RowDefinition { Height = new GridLength (100, GridUnitType.Absolute) }
 				},
 				ColumnDefinitions = {
 					new ColumnDefinition { Width = new GridLength (4, GridUnitType.Absolute) },
-					new ColumnDefinition { Width = new GridLength (300, GridUnitType.Star) }
+					new ColumnDefinition {
+						
+					}
 				}
 			};
 
 			grid.Children.Add (
 				new FixtureCardStatusView ()
 				,0,0);
-
 			grid.Children.Add (new LeagueCardDetailsView (LeagueItem), 1, 0);
 
-			var mainContent = new RelativeLayout ();
-
-			mainContent.Children.Add(grid,
-				Constraint.Constant(0),
-				Constraint.Constant(0),
-				Constraint.RelativeToParent ((parent) => {
-					return parent.Width;
-				}),
-				Constraint.RelativeToParent ((parent) => {
-					return 100;
-				})
-			);
-			var button = new Button (){
-				BackgroundColor = Color.Transparent,
-				BorderColor = Color.Transparent,
-				BorderRadius = 0,
-				BorderWidth = 0,
-				Text = ""
+			var tgr = new TapGestureRecognizer { NumberOfTapsRequired = 1 };
+			tgr.Tapped += (sender, args) => {
+				OnCardClicked?.Invoke (LeagueItem);
 			};
-			mainContent.Children.Add(button,
-				Constraint.Constant(0),
-				Constraint.Constant(0),
-				Constraint.RelativeToParent ((parent) => {
-					return parent.Width;
-				}),
-				Constraint.RelativeToParent ((parent) => {
-					return 100;
-				})
-			);
-			button.Clicked += Button_Clicked;
-
-			Content = mainContent;
+			grid.GestureRecognizers.Add (tgr);
+			Content = grid;
 		}
 
 		void Button_Clicked (object sender, EventArgs e)

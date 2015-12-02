@@ -26,6 +26,32 @@ namespace ScoresApp.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::ScoresApp.Droid.Resource.String.ApplicationName;
+			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::ScoresApp.Droid.Resource.String.Hello;
+			global::NGraphics.Android.Custom.Resource.String.library_name = global::ScoresApp.Droid.Resource.String.library_name;
+			global::com.refractored.fab.Resource.Attribute.fab_colorDisabled = global::ScoresApp.Droid.Resource.Attribute.fab_colorDisabled;
+			global::com.refractored.fab.Resource.Attribute.fab_colorNormal = global::ScoresApp.Droid.Resource.Attribute.fab_colorNormal;
+			global::com.refractored.fab.Resource.Attribute.fab_colorPressed = global::ScoresApp.Droid.Resource.Attribute.fab_colorPressed;
+			global::com.refractored.fab.Resource.Attribute.fab_colorRipple = global::ScoresApp.Droid.Resource.Attribute.fab_colorRipple;
+			global::com.refractored.fab.Resource.Attribute.fab_shadow = global::ScoresApp.Droid.Resource.Attribute.fab_shadow;
+			global::com.refractored.fab.Resource.Attribute.fab_size = global::ScoresApp.Droid.Resource.Attribute.fab_size;
+			global::com.refractored.fab.Resource.Color.fab_material_blue_500 = global::ScoresApp.Droid.Resource.Color.fab_material_blue_500;
+			global::com.refractored.fab.Resource.Dimension.fab_elevation_lollipop = global::ScoresApp.Droid.Resource.Dimension.fab_elevation_lollipop;
+			global::com.refractored.fab.Resource.Dimension.fab_scroll_threshold = global::ScoresApp.Droid.Resource.Dimension.fab_scroll_threshold;
+			global::com.refractored.fab.Resource.Dimension.fab_shadow_size = global::ScoresApp.Droid.Resource.Dimension.fab_shadow_size;
+			global::com.refractored.fab.Resource.Dimension.fab_size_mini = global::ScoresApp.Droid.Resource.Dimension.fab_size_mini;
+			global::com.refractored.fab.Resource.Dimension.fab_size_normal = global::ScoresApp.Droid.Resource.Dimension.fab_size_normal;
+			global::com.refractored.fab.Resource.Drawable.fab_shadow = global::ScoresApp.Droid.Resource.Drawable.fab_shadow;
+			global::com.refractored.fab.Resource.Drawable.fab_shadow_mini = global::ScoresApp.Droid.Resource.Drawable.fab_shadow_mini;
+			global::com.refractored.fab.Resource.Id.mini = global::ScoresApp.Droid.Resource.Id.mini;
+			global::com.refractored.fab.Resource.Id.normal = global::ScoresApp.Droid.Resource.Id.normal;
+			global::com.refractored.fab.Resource.Styleable.FloatingActionButton = global::ScoresApp.Droid.Resource.Styleable.FloatingActionButton;
+			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_colorDisabled = global::ScoresApp.Droid.Resource.Styleable.FloatingActionButton_fab_colorDisabled;
+			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_colorNormal = global::ScoresApp.Droid.Resource.Styleable.FloatingActionButton_fab_colorNormal;
+			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_colorPressed = global::ScoresApp.Droid.Resource.Styleable.FloatingActionButton_fab_colorPressed;
+			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_colorRipple = global::ScoresApp.Droid.Resource.Styleable.FloatingActionButton_fab_colorRipple;
+			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_shadow = global::ScoresApp.Droid.Resource.Styleable.FloatingActionButton_fab_shadow;
+			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_size = global::ScoresApp.Droid.Resource.Styleable.FloatingActionButton_fab_size;
 			global::Xamarin.Forms.Platform.Resource.Animation.abc_fade_in = global::ScoresApp.Droid.Resource.Animation.abc_fade_in;
 			global::Xamarin.Forms.Platform.Resource.Animation.abc_fade_out = global::ScoresApp.Droid.Resource.Animation.abc_fade_out;
 			global::Xamarin.Forms.Platform.Resource.Animation.abc_grow_fade_in_from_bottom = global::ScoresApp.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -1484,32 +1510,6 @@ namespace ScoresApp.Droid
 			global::Xamarin.Forms.Platform.Resource.Styleable.ViewStubCompat_android_id = global::ScoresApp.Droid.Resource.Styleable.ViewStubCompat_android_id;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ViewStubCompat_android_inflatedId = global::ScoresApp.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
 			global::Xamarin.Forms.Platform.Resource.Styleable.ViewStubCompat_android_layout = global::ScoresApp.Droid.Resource.Styleable.ViewStubCompat_android_layout;
-			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::ScoresApp.Droid.Resource.String.ApplicationName;
-			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::ScoresApp.Droid.Resource.String.Hello;
-			global::NGraphics.Android.Custom.Resource.String.library_name = global::ScoresApp.Droid.Resource.String.library_name;
-			global::com.refractored.fab.Resource.Attribute.fab_colorDisabled = global::ScoresApp.Droid.Resource.Attribute.fab_colorDisabled;
-			global::com.refractored.fab.Resource.Attribute.fab_colorNormal = global::ScoresApp.Droid.Resource.Attribute.fab_colorNormal;
-			global::com.refractored.fab.Resource.Attribute.fab_colorPressed = global::ScoresApp.Droid.Resource.Attribute.fab_colorPressed;
-			global::com.refractored.fab.Resource.Attribute.fab_colorRipple = global::ScoresApp.Droid.Resource.Attribute.fab_colorRipple;
-			global::com.refractored.fab.Resource.Attribute.fab_shadow = global::ScoresApp.Droid.Resource.Attribute.fab_shadow;
-			global::com.refractored.fab.Resource.Attribute.fab_size = global::ScoresApp.Droid.Resource.Attribute.fab_size;
-			global::com.refractored.fab.Resource.Color.fab_material_blue_500 = global::ScoresApp.Droid.Resource.Color.fab_material_blue_500;
-			global::com.refractored.fab.Resource.Dimension.fab_elevation_lollipop = global::ScoresApp.Droid.Resource.Dimension.fab_elevation_lollipop;
-			global::com.refractored.fab.Resource.Dimension.fab_scroll_threshold = global::ScoresApp.Droid.Resource.Dimension.fab_scroll_threshold;
-			global::com.refractored.fab.Resource.Dimension.fab_shadow_size = global::ScoresApp.Droid.Resource.Dimension.fab_shadow_size;
-			global::com.refractored.fab.Resource.Dimension.fab_size_mini = global::ScoresApp.Droid.Resource.Dimension.fab_size_mini;
-			global::com.refractored.fab.Resource.Dimension.fab_size_normal = global::ScoresApp.Droid.Resource.Dimension.fab_size_normal;
-			global::com.refractored.fab.Resource.Drawable.fab_shadow = global::ScoresApp.Droid.Resource.Drawable.fab_shadow;
-			global::com.refractored.fab.Resource.Drawable.fab_shadow_mini = global::ScoresApp.Droid.Resource.Drawable.fab_shadow_mini;
-			global::com.refractored.fab.Resource.Id.mini = global::ScoresApp.Droid.Resource.Id.mini;
-			global::com.refractored.fab.Resource.Id.normal = global::ScoresApp.Droid.Resource.Id.normal;
-			global::com.refractored.fab.Resource.Styleable.FloatingActionButton = global::ScoresApp.Droid.Resource.Styleable.FloatingActionButton;
-			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_colorDisabled = global::ScoresApp.Droid.Resource.Styleable.FloatingActionButton_fab_colorDisabled;
-			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_colorNormal = global::ScoresApp.Droid.Resource.Styleable.FloatingActionButton_fab_colorNormal;
-			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_colorPressed = global::ScoresApp.Droid.Resource.Styleable.FloatingActionButton_fab_colorPressed;
-			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_colorRipple = global::ScoresApp.Droid.Resource.Styleable.FloatingActionButton_fab_colorRipple;
-			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_shadow = global::ScoresApp.Droid.Resource.Styleable.FloatingActionButton_fab_shadow;
-			global::com.refractored.fab.Resource.Styleable.FloatingActionButton_fab_size = global::ScoresApp.Droid.Resource.Styleable.FloatingActionButton_fab_size;
 		}
 		
 		public partial class Animation
@@ -4059,11 +4059,11 @@ namespace ScoresApp.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f070020
-			public const int ApplicationName = 2131165216;
-			
 			// aapt resource value: 0x7f07001f
-			public const int Hello = 2131165215;
+			public const int ApplicationName = 2131165215;
+			
+			// aapt resource value: 0x7f07001e
+			public const int Hello = 2131165214;
 			
 			// aapt resource value: 0x7f07000c
 			public const int abc_action_bar_home_description = 2131165196;
@@ -4119,8 +4119,8 @@ namespace ScoresApp.Droid
 			// aapt resource value: 0x7f07000b
 			public const int appbar_scrolling_view_behavior = 2131165195;
 			
-			// aapt resource value: 0x7f07001e
-			public const int library_name = 2131165214;
+			// aapt resource value: 0x7f070020
+			public const int library_name = 2131165216;
 			
 			// aapt resource value: 0x7f070000
 			public const int mr_media_route_button_content_description = 2131165184;

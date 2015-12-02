@@ -74,15 +74,6 @@ namespace ScoresApp.Pages
 						var removedIndex = -1;
 						for(int i = 0; i < (_mainContent.Content as StackLayout).Children.Count; i++)
 						{
-							if (removedIndex != -1) {
-								/*(_mainContent.Content as StackLayout).Children [i].TranslateTo (
-									(_mainContent.Content as StackLayout).Children [i - 1].Y,
-									(_mainContent.Content as StackLayout).Children [i].X,
-									(uint)Integers.AnimationSpeed,
-									Easing.Linear
-								);*/
-							}
-
 							if (ViewModel.FavoritesLeagues.FirstOrDefault (item => item.Id == ((_mainContent.Content as StackLayout).Children[i] as LeagueCardView).LeagueItem.Id) == null && removedIndex == -1) {
 								removedIndex = i;
 								await (_mainContent.Content as StackLayout).Children [i].FadeTo (0, (uint)Integers.AnimationSpeed, Easing.SinIn);
@@ -91,10 +82,6 @@ namespace ScoresApp.Pages
 								break;
 							}
 						}
-						/*if (!ViewModel.FavoritesLeagues.Contains ((card as LeagueCardView).LeagueItem)) {
-							card.FadeTo (0, (uint)Integers.AnimationSpeed, Easing.SinIn);
-						}*/
-						//Content = 
 					}
 				} else {
 					Content = _noFavoritesView;
@@ -155,7 +142,7 @@ namespace ScoresApp.Pages
 		void OnCardClicked(LeagueItem item)
 		{
 			Title = "";
-			Navigation.PushAsync (new LeagueResultsPage (item));
+			Navigation.PushAsync (new LeagueResultsPage (item), true);
 		}
 
 		#endregion
