@@ -33,7 +33,7 @@ namespace ScoresApp.Models
 						Text = "Bundesliga",
 						Description = "Germany",
 						Id = "BL1",
-						Image = "http://www.sciencekids.co.nz/images/pictures/flags680/Germany.jpg"
+						Image = "http://www.nationsonline.org/flags_big/Germany_lgflag.gif"
 					};
 				}
 				return _bundesliga;
@@ -51,7 +51,7 @@ namespace ScoresApp.Models
 						Text = "Premiere League",
 						Description = "England",
 						Id = "PL",
-						Image = "http://www.sciencekids.co.nz/images/pictures/flags680/England.jpg"
+						Image = "http://www.nationsonline.org/flags_big/United_Kingdom_lgflag.gif"
 					};
 				}
 				return _premiereLeague;
@@ -69,7 +69,7 @@ namespace ScoresApp.Models
 						Text = "Serie A",
 						Description = "Italy",
 						Id = "SA",
-						Image = "http://www.sciencekids.co.nz/images/pictures/flags680/Italy.jpg"
+						Image = "http://www.nationsonline.org/flags_big/Italy_lgflag.gif"
 					};
 				}
 				return _serieA;
@@ -87,7 +87,7 @@ namespace ScoresApp.Models
 						Text = "Primera Division",
 						Description = "Spain",
 						Id = "PD",
-						Image = "http://www.sciencekids.co.nz/images/pictures/flags680/Spain.jpg"
+						Image = "http://www.nationsonline.org/flags_big/Spain_lgflag.gif"
 					};
 				}
 				return _primeraDivision;
@@ -105,7 +105,7 @@ namespace ScoresApp.Models
 						Text = "Ligue 1",
 						Description = "France",
 						Id = "FL1",
-						Image = "http://www.sciencekids.co.nz/images/pictures/flags680/France.jpg"
+						Image = "http://flaglane.com/download/french-flag/french-flag-graphic.png"
 					};
 				}
 				return _ligue1;
@@ -123,7 +123,7 @@ namespace ScoresApp.Models
 						Text = "Eredivisie",
 						Description = "Netherlands",
 						Id = "DED",
-						Image = "http://www.sciencekids.co.nz/images/pictures/flags680/Netherlands.jpg"
+						Image = "http://www.nationsonline.org/flags_big/Netherlands_lgflag.gif"
 					};
 				}
 				return _eredivisie;
