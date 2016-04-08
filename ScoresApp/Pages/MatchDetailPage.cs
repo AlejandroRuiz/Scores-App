@@ -188,7 +188,7 @@ namespace ScoresApp.Pages
 		public MatchDetailPage (FixtureViewModel vm)
 		{
 			BindingContext = vm;
-			this.SetBinding (ContentPage.TitleProperty, path:nameof (vm.MatchTitle));
+			this.SetBinding (ContentPage.TitleProperty, path:nameof (FixtureViewModel.MatchTitle));
 			CreateLayout ();
 		}
 

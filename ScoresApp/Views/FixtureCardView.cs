@@ -15,11 +15,11 @@ namespace ScoresApp.Views
 		{
 			_homeTeamDetails = new FixtureCardDetailsView (fixture?.Fixture?.HomeTeam);
 			_homeTeamDetails.TeamGoals.BindingContext = fixture;
-			_homeTeamDetails.TeamGoals.SetBinding (Label.TextProperty, nameof(fixture?.HomeTeamGoals));
+			_homeTeamDetails.TeamGoals.SetBinding(Label.TextProperty, nameof(FixtureViewModel.HomeTeamGoals));
 
 			_awayTeamDetails = new FixtureCardDetailsView (fixture?.Fixture?.AwayTeam);
 			_awayTeamDetails.TeamGoals.BindingContext = fixture;
-			_awayTeamDetails.TeamGoals.SetBinding (Label.TextProperty, nameof(fixture?.AwayTeamGoals));
+			_awayTeamDetails.TeamGoals.SetBinding(Label.TextProperty, nameof(FixtureViewModel.AwayTeamGoals));
 
 			Grid grid = new Grid {
 				Padding = new Thickness(1,1,2,2),
